@@ -1,0 +1,328 @@
+.detailMovie {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.detailMovie__intro {
+    width: 80%;
+}
+
+.detailMovie__backdrop {
+    width: 100%;
+    height: 500px;
+    object-fit: fill;
+    object-position: 0 35%;
+    opacity: 0.6;
+}
+
+.detailMovie__detail {
+    align-items: center;
+    width: 75%;
+    display: flex;
+    position: relative;
+    bottom: 225px;
+}
+
+.detailMovie__detailLeft {
+    margin-right: 30px;
+}
+
+.detailMovie_poster {
+    width:300px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.86) 0px 22px 40px 6px;
+}
+
+.detailMovie__detailRight {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    justify-content:space-between ;
+   
+}
+
+.detailMovie_detailRightTop > div{
+    text-shadow: 0px 0px 5px #000000;
+    margin-bottom: .5rem;
+   
+}
+
+.detailMovie__name {
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+.detailMovie.voteCount {
+    margin-left: 1rem;
+}
+
+.detailMovie__genres {
+    margin: 1.25rem 0;
+}
+
+.detailMovie__genre {
+    padding: .5rem;
+    border: 2px solid white;
+    border-radius: 20px;
+    margin-right: 1rem;
+}
+
+
+.detailMovie__detailRightBottom {
+    margin: 2rem 0;
+    flex: 0.8;
+}
+
+.heart-icon {
+    color: red;
+  
+  }
+  
+  .heart-icon.filled {
+    fill: red;
+  
+  }
+  
+
+.summaryText {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    padding-top: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    position: relative;
+    align-items: center;
+    
+}
+.summaryText > div:last-of-type {
+    margin-left: auto;
+}
+
+.detailMovie_castImg {
+    border-radius: 50%;
+    width: 15rem;
+    height:15rem;
+    /* margin: 3em; */
+}
+
+/* Style for  similar movies */
+#app {
+    height: 100%;
+  }
+  html,
+  body {
+    position: relative;
+    height: 100%;
+  }
+  
+.detailMovie__similar {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+ .cardsSimilar {
+    display: inline-block;
+    transition: transform .2s;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0.19rem;
+    cursor: pointer;
+    min-width: 100%;
+    height: 23rem;
+    z-index:0;
+    border: 1px solid rgb(99, 99, 99);
+    object-fit: contain;
+}
+
+.cardsSimilar:hover {
+    transform: scale(0.9);
+    z-index: 1000;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+.cardSimilar__overlay {
+    position: absolute;
+    padding: 0 1rem 1rem 1rem;
+    bottom: 0px;
+    height: 290px;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    justify-content: flex-end;
+    background-image: linear-gradient(rgb(0,0,0,0), rgb(0,0,0,1));
+    opacity: 0;
+    transition: opacity .2s;
+}   
+
+.cardSimilar__overlay:hover {
+    opacity: 1;
+}
+
+.cardSimilar__title {
+    font-weight: 900;
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+}
+
+.cardSimilar__runtime {
+    font-size: .75rem;
+    margin-bottom: 0.25rem;
+}
+
+.cardSimilar__rating {
+    float: right;
+}
+
+.cardSimilar__description {
+    font-style: italic;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+ /*End Style for  Cards each similar movies*/
+
+ /* Trailer */
+.detailMovie__trailer { 
+    margin-top: 5rem;
+}
+ iframe {
+    margin-bottom: 5rem;
+ }
+
+
+/* End trailer */
+
+/* Review */
+.detailMovie__review {
+    display: grid;
+    grid-template-columns: 5% 45% 45%;
+    gap: 5px;
+    background-color: #393737;
+    padding: 20px;
+    height: auto;
+    color: rgb(251, 251, 251);
+    margin-bottom: 20px;
+    
+  }
+  
+  .detailMovie__review > div {
+    text-align: left;
+  }
+  
+  .detailMovie_reviewImg, .detailMovie_reviewImg__2 {
+    grid-row-start: 1;
+    grid-row-end: 1;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .detailMovie__reviewName {
+    color: rgb(255, 174, 0);
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    grid-column-start: 2;
+    grid-column-end: 5;
+  }
+  
+  .detailMovie__reviewContent {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    grid-column-start: 2;
+    grid-column-end: 5;
+  }
+  
+  .detailMovie__reviewContent span {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .detailMovie__reviewContent a {
+    color: rgb(229, 187, 98);
+    text-decoration: underline;
+  }
+  
+  .detailMovie__reviewContent a:hover {
+    text-decoration: none;
+  }
+  
+/* End review*/
+
+
+
+
+/* 
+
+
+.movie__links {
+    position: relative;
+    bottom: 120px;
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+}
+
+.movie__heading {
+    font-size: 2.2rem;
+}
+
+.movie__Button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 150px;
+    color: black;
+    font-weight: bold;
+}
+
+.movie__homeButton {
+    background-color:rgb(255, 0, 0);
+    
+}
+
+.movie__imdbButton {
+    background-color:#f3ce13;
+}
+
+.newTab {
+    margin-left: 1.4rem;
+}
+
+.movie__production {
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+}
+
+
+.movie__productionComapany {
+    width: 200px;
+    margin: 2rem;
+}
+
+.productionCompanyImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} */

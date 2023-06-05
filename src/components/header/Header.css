@@ -1,0 +1,25 @@
+
+
+
+a > span{
+    cursor: pointer;
+    color: grey;
+}
+
+a > span:hover {
+    color: red;
+}
+
+/* .header__icon {
+    width: 100px;
+    cursor: pointer;
+} */
+
+.user__avatar {
+    font-size: 2rem;
+}
+
+.custom-navbar {
+    background-color: black; 
+    color: #ffffff; 
+  }
