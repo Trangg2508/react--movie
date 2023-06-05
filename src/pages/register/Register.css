@@ -1,5 +1,6 @@
-
-.wrapper_signUp {
+@media screen and (min-width: 767px) {
+  
+  .wrapper_signUp {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -31,3 +32,38 @@
     opacity: 0.8;
   }
   
+  }
+  
+  @media screen and (max-width: 767px) {
+    
+  .wrapper_signUp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .signUp_content {
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.971);
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    color: white;
+   opacity: 0.9;
+  }
+  
+  .wrapper_signUp img {
+    position: absolute;
+    /* top: 0;
+    right: 0; */
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.8;
+  }
+  
+  }
