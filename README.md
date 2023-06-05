@@ -21,7 +21,7 @@
 # Preview
 !["Responsive React Movies App With API"](https://github.com/Trangg2508/react--movie/blob/main/home.png "Responsive React Movies App With API")
 
-!["Responsive React Movies App With API"](https://github.com/Trangg2508/react--movie/blob/main/list.png "Responsive React Movies App With API")
+!["Responsive React Movies App With API"](https://github.com/Trangg2508/react--movie/blob/c7ee98b0be7c49832165627cf689d832b3adffdd/movie.png "Responsive React Movies App With API")
 
 !["Responsive React Movies App With API"](https://github.com/Trangg2508/react--movie/blob/main/detail.png "Responsive React Movies App With API")
 
