@@ -1,4 +1,4 @@
-// Login.js
+
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -14,34 +14,30 @@ export default function Login() {
   const navigate = useNavigate();
   const [fail, setFail] = useState(false);
 
-      
+
   const signIn = (user) => {
     return fetch(`https://640c4dd9a3e07380e8f11292.mockapi.io/userCINE`)
-    .then(response => response.json())
-    .then((data) => {
+      .then(response => response.json())
+      .then((data) => {
         const matchedUser = data.find(
           (userData) => userData.username === user.username && userData.password === user.password);
-        if(matchedUser) {
+        if (matchedUser) {
           localStorage.setItem('token', matchedUser.username);
-          // alert('Login successfully!');
-          // setSuccess(true);
           navigate('/');
           window.location.reload();
         } else {
-          // alert('Invalid username or password');
           setFail(true);
         }
-    })
-    .catch((error) => {
-      console.log("Error log in: ", error);
-      // alert("Error log in");
-      setFail(true);
-    })
+      })
+      .catch((error) => {
+        console.log("Error log in: ", error);
+        setFail(true);
+      })
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const user = {username,  password};
+    const user = { username, password };
     signIn(user);
   }
 
@@ -66,7 +62,7 @@ export default function Login() {
                 value={username}
                 onChange={(event) => setUsername(event.target.value)}
                 required
-                
+
               />
 
               <TextInput
@@ -76,37 +72,37 @@ export default function Login() {
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
                 required
-                
+
               /><br></br>
-              <Button type='submit' style={{backgroundColor: '#FFC93C', fontWeight: 'bold', fontSize: '1rem'}} fullWidth variant="contained">
+              <Button type='submit' style={{ backgroundColor: '#FFC93C', fontWeight: 'bold', fontSize: '1rem' }} fullWidth variant="contained">
                 Login
               </Button>
             </div>
-            
+
           </form>
         </div>
         <Dialog
-        open={fail}
-        onClose={handleCloseFail}
-        aria-labelledby="responsive-dialog-title"
-      >
-        <DialogTitle id="responsive-dialog-title">
-          {"Error Login"}
-        </DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-             Invalid username or password!
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button autoFocus  onClick={() => navigate('/register')} >
-             Sign up
-          </Button>
-          <Button onClick={handleCloseFail} autoFocus>
-            Retry login 
-          </Button>
-        </DialogActions>
-      </Dialog>
+          open={fail}
+          onClose={handleCloseFail}
+          aria-labelledby="responsive-dialog-title"
+        >
+          <DialogTitle id="responsive-dialog-title">
+            {"Error Login"}
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Invalid username or password!
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button autoFocus onClick={() => navigate('/register')} >
+              Sign up
+            </Button>
+            <Button onClick={handleCloseFail} autoFocus>
+              Retry login
+            </Button>
+          </DialogActions>
+        </Dialog>
       </div>
     </>
   )

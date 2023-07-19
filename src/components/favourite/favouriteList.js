@@ -1,21 +1,16 @@
 
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Card from '../card/Card';
-import { removeFromList } from './handleFavourite';
 import { Dialog, DialogActions, DialogContent, DialogTitle, Button, DialogContentText } from '@mui/material';
 import './favouriteList.css';
 
 export default function FavouriteList() {
   const listFavour = useSelector((state) => state.favourite.likeItem);
-  const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
-  // const handleRemove = (movieID) => {
-  //   dispatch(removeFromList(movieID));
-  // };
 
   const handleClickOpen = () => {
     if (localStorage.getItem('token') !== null) {
@@ -31,20 +26,19 @@ export default function FavouriteList() {
 
   return (
     <div>
-        <h2 className='list__title'>FAVORITES</h2>
+      <h2 className='list__title'>FAVORITES</h2>
       <div className="list__cards">
         {listFavour.length === 0 ? (
-            <div className="empty__message">
-           <p>You have not liked any movie yet.</p>
-           <Button onClick={handleClickOpen} className="add__movies__button">Add more movies</Button>
-         </div>
+          <div className="empty__message">
+            <p>You have not liked any movie yet.</p>
+            <Button onClick={handleClickOpen} className="add__movies__button">Add more movies</Button>
+          </div>
         ) : (
           listFavour.map((LikeMovie) => (
             <div key={LikeMovie.id}>
               <Card movie={LikeMovie} />
-              {/* <button onClick={() => handleRemove(LikeMovie.id)}>Remove</button> */}
             </div>
-            ))
+          ))
         )}
       </div>
 

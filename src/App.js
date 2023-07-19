@@ -17,28 +17,27 @@ import FavouriteList from './components/favourite/favouriteList';
 
 
 
+
 function App() {
   return (
     <div className='App'>
 
-      <Header/>
+      <Header />
       <Routes>
-          
-          <Route path='/' element={<Home/>}></Route>
-      
-        <Route path='/movie/:id' element={<Detail/>}></Route>
-        <Route path='/movies/:type' element={<MovieList/>}></Route>
-        <Route path='/search' element={<Search/>}></Route>
-        <Route path='/register' element={<Register/>}></Route>
-        <Route path='/login' element={<Login/>}></Route>
-        <Route path='/like' element={<FavouriteList/>}></Route>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/movie/:id' element={<Detail />}></Route>
+        <Route path='/movies/:type' element={<MovieList />}></Route>
+        <Route path='/search' element={<Search />}></Route>
+        <Route path='/register' element={<Register />}></Route>
+        <Route path='/login' element={<Login />}></Route>
+        <Route path='/like' element={<FavouriteList />}></Route>
 
       </Routes>
 
 
-     
+
     </div>
-  )	
+  )
 }
 
 
